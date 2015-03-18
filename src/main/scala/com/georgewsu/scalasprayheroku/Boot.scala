@@ -20,6 +20,6 @@ object Boot extends App {
   val config = ConfigFactory.load()
   val port = config.getInt("port")
 
-  IO(Http) ? Http.Bind(service, interface = "localhost", port = port)
+  IO(Http) ? Http.Bind(service, interface = "0.0.0.0", port = port)
 
 }
